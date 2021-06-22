@@ -3,7 +3,17 @@
     {
       "nome": "felipe",
       "email": "felipe@alura.com",
-      "id": 1
+      "id": 3
+    },
+    {
+      "nome": "leonardo viana",
+      "email": "leonardo@gmail.com",
+      "id": 4
+    },
+    {
+      "nome": "leona",
+      "email": "leona@alura.com",
+      "id": 5
     }
   ]
 }
