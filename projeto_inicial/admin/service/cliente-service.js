@@ -1,19 +1,17 @@
-import { bodyParser } from "json-server"
-
-const listaClientes = () => {
+const listaClientes = () =>  {
     return fetch(`http://localhost:3000/profile`)
-    .then(resposta =>{
+    .then(resposta => {
         return resposta.json()
     })
 }
 
-const criaCliente = (nome, email) =>{
-    return fetch(`http://localhost:3000/profile`,{
-        method: 'POST',
-        header: {
+const criaCliente = (nome, email) => { 
+    return fetch(`http://localhost:3000/profile`, {
+        method: 'POST', 
+        headers: {
             'Content-Type' : 'application/json'
         },
-        body: JSON.strigify({
+        body: JSON.stringify({
             nome: nome,
             email: email
         })
@@ -23,7 +21,22 @@ const criaCliente = (nome, email) =>{
     })
 }
 
-export const clienteService = {
+const removeCliente = (id) => { 
+    return fetch(`http://localhost:3000/profile/${id}`, {
+        method: 'DELETE'
+    })
+}
+
+const detalhaCliente = (id) => {
+    return fetch(`http://localhost:3000/profile/${id}`)
+    .then(resposta => {
+        return resposta.json()
+    })
+}
+
+export const clienteService = { 
     listaClientes,
-    criaCliente
+    criaCliente, 
+    removeCliente,
+    detalhaCliente
 }
